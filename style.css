@@ -53,7 +53,10 @@ input {
 }
 .card{
     border-radius: 19px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background-color: #151f30;
+}
+center{
+    padding-top: 12px;
 }

@@ -1,16 +1,9 @@
-const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=5be927140556bd32708b0c743fcdc25&page=1'
-const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
-const SEARCHAPI = "https://api.	hemoviedb.org/3/search/movie? &api_key=5be927140556bd32708b0c743fcdc25&query=";
 
-// BENCE YUKARIDAKİ APILERDE SORUN VAR AYARLAYAMADIM HATA ALIYORUM BUNUN GİDERECEĞİM
+APILINK="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=&page=2"
+IMG_PATH="https://image.tmdb.org/t/p/w1280"
+SEARCHAPI="https://api.themoviedb.org/3/search/movie?query="
 
-```  
-const APILINK = 'https://api.themoviedb.org/3/discover/movie?  
-sort_by=popularity.desc&api_key=5be927140556bd32708b0c743fcdc25&page=1';  
-const IMG_PATH = "https://image.tmdb.org/t/p/w1280";  
-const SEARCHAPI = "https://api.\themoviedb.org/3/search/movie?  
-&api_key=5be927140556bd32708b0c743fcdc25&query=";  
-```
+
 
 
 const main = document.getElementById("section");
@@ -20,8 +13,9 @@ const search = document.getElementById("query");
 returnMovies(APILINK);
 
 function returnMovies(url) {
-    fetch(url).then(response => response.json())
-        .then(function (data) {
+    fetch(url)
+        .then(response => response.json())
+        .then((data) => {
             console.log(data.results)
             data.results.forEach(element => {
                 const div_card = document.createElement('div');
@@ -51,7 +45,7 @@ function returnMovies(url) {
                 div_column.appendChild(div_card);
                 div_row.appendChild(div_column);
 
-                main.appendChild(div_row);
+                main.appendChild(div_row); // Sayfa içerisine eklemeyi sağlar
             });
         });
 }
@@ -64,7 +58,6 @@ form.addEventListener("submit", (e) => {
 
     if (searchItem) {
         returnMovies(SEARCHAPI + searchItem);
-        search.value = "" // yazdığımız yeri temizliyoruz
+        search.value = ""; // Arama değerini temizliyoruz
     }
-
 })
