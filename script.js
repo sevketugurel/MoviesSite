@@ -1,7 +1,7 @@
-const apiKey = 'b1b097cebbc596sevket81982a6e8564267e43';
+const apiKey ="b1b097cebbc59681982a6e8564267e43";
 const APILINK = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${apiKey}`;
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
-const SEARCHAPI = `https://api.themoviedb.org/3/search/movie?&api_key=${apiKey}&query=`;
+
 
 const main = document.getElementById("section");
 const form = document.getElementById("form");
