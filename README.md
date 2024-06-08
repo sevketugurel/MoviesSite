@@ -1,4 +1,4 @@
-# Movie Site Project
+# Movie Site Project (Frontend)
 
 ## Overview
 
